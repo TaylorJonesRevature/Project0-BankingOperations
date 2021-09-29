@@ -1,9 +1,11 @@
 # Project 0 - Banking Application
 
 **Description**
+
 Leveraging Java 8, create an application that simulates simple banking transactions
 
 **Getting Started**
+
 You have two options to get started,
 
 1.
@@ -48,6 +50,7 @@ You have two options to get started,
 The project will be evaluated out of 100 points split between two main catagories: 70 points for the functionality and design of your project and 30 points for the presentation of your project during the project showcase. The evaluation will be further subdivided as follows: 
 
 **Project Score**(70 pts):
+
 * 15 pts: Ability to persist meaningful data in the database and then retrieve it and display it to the console. 
 * 15 pts: Ability to make withdrawals from, deposits to, and transfers between accounts.
 * 10 pts: Proper database schema achieving 3rd normal form. (E.g. Accounts have a proper relationship to their owning user.)
@@ -59,6 +62,7 @@ The project will be evaluated out of 100 points split between two main catagorie
 
 
 **Presentation Score**(30 pts):
+
 * 15 pts: Clear, concise and professional communication during the project presentation.
 * 10 pts: Ability to communicate clear answers to fully address questions asked about the project. 
 * 5 pts: Logical flow to the project presentation. 
