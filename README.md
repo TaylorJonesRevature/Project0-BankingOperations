@@ -5,6 +5,7 @@ Leveraging Java 8, create an application that simulates simple banking transacti
 
 **Getting Started**
 You have two options to get started,
+
 1.
    * Create a new Repository on GitHub and clone it to your machine
    * Download the files for the project from the remote repository and place them in the repository on your machine
