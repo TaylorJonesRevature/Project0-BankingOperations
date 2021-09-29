@@ -3,6 +3,20 @@
 **Description**
 Leveraging Java 8, create an application that simulates simple banking transactions
 
+**Getting Started**
+You have two options to get started,
+1.
+   * Create a new Repository on GitHub and clone it to your machine
+   * Download the files for the project from the remote repository and place them in the repository on your machine
+   * Push the code your remote repository, and import the project into STS as a Maven project
+2.
+   * Create a new Repository on GitHub
+   * Clone the Project0-BankingOperations repository to your machine
+   * `cd Project0-BankingOperations`
+   * `git remote set-url origin https://github.com/YOURGITREPOURLGOESHERE.git` this will start tracking the repo you just created
+   * `git push -u origin master` this will push the project 0 code template to your created repository
+   * Import the project as a Maven project in STS and start coding
+
 **Requirements**
 *	Build the application using Java 8
 *	All interaction with the user should be done through the console using the `Scanner` class
