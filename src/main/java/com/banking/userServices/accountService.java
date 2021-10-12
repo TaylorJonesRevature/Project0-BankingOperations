@@ -6,6 +6,7 @@ import java.util.List;
 import com.banking.dao.UserDao;
 import com.banking.dao.accountDao;
 import com.banking.dao.accountDaoDB;
+import com.banking.exceptions.DuplicateAccountSetupsException;
 import com.banking.logging.Logging;
 import com.banking.models.Application;
 import com.banking.models.Customer;
@@ -22,8 +23,8 @@ public class accountService{
 		try{
 			aDao.createPendingAccount(c);
 		} catch(SQLException e) {
-			e.getStackTrace();
-			Logging.logger.warn("SQL Error detected.");
+			Logging.logger.warn("Duplicate accounts setups detected.");
+			throw new DuplicateAccountSetupsException();
 		};
 	}
 	
@@ -56,4 +57,16 @@ public class accountService{
 		}
 		return username;
 	} 
+	
+	public double deposit(String username, double i) {
+		double checkingBalance = 0;
+		try {
+			checkingBalance = aDao.depositFunds(username, i);
+			return checkingBalance;
+		} catch (SQLException e) {
+			Logging.logger.warn("SQL error detected in deposit step");
+			e.printStackTrace();
+		}
+		return checkingBalance;
+	}
 }

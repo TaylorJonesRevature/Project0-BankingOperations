@@ -5,7 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.banking.models.Application;
 import com.banking.models.Customer;
 import com.banking.models.Employee;
 import com.banking.models.bankingUser;
@@ -73,6 +76,21 @@ public class UserDaoDB implements UserDao {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public List<Customer> getAllCusts() throws SQLException {
+		List<Customer> custList = new ArrayList<Customer>();
+		Connection con = conUtil.getConnection();
+		String sql = "Select * from users full join accounts on id = user_id;";
+		
+		Statement s = con.createStatement();
+		ResultSet rs = s.executeQuery(sql);
+		
+		while(rs.next()) {
+			custList.add(new Customer(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDouble(9), rs.getDouble(10)));
+		}
+		
+		return custList;
 	}
 	
 	public Employee getEmpByUsername(String username) {

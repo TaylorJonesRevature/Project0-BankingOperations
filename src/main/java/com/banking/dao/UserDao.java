@@ -14,6 +14,8 @@ public interface UserDao {
 	Customer getCustByUsername(String username);
 	Employee getEmpByUsername(String username);
 	
+	List<Customer> getAllCusts() throws SQLException;
+	
 	void createCustUser(Customer u) throws SQLException;
 	void createEmpUser(Employee u) throws SQLException;
 	

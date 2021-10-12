@@ -1,6 +1,8 @@
 package com.banking.userServices;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -82,5 +84,16 @@ public class bankingUserService {
 			Logging.logger.info("User was successfully logged in");
 			return emp;
 		}
+	}
+	
+	public List<Customer> getAllCustomers(){
+		List<Customer> custList = new ArrayList<Customer>();
+		try {
+			custList = uDao.getAllCusts();
+		} catch(SQLException e) {
+			Logging.logger.warn("SQL error detected");
+			e.printStackTrace();
+		}
+		return custList;
 	}
 }

@@ -69,5 +69,9 @@ public abstract class bankingUser {
 		this.id = id;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "[firstname=" + firstname + ", lastname=" + lastname + ", username=" + username
+				+ ", password=" + password + "]";
+	}
 }

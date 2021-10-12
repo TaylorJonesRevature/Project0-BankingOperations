@@ -41,8 +41,8 @@ public class accountDaoDB implements accountDao {
 		ps.setInt(1, c.getId());
 
 		ps.execute();
-
 	}
+
 	
 	public String deny(int i) throws SQLException {
 		Connection con = conUtil.getConnection();
@@ -134,5 +134,39 @@ public class accountDaoDB implements accountDao {
 		}
 		
 		return null;
+	}
+	
+	public double depositFunds(String username, double i) throws SQLException{
+		Connection con = conUtil.getConnection();
+		int user_id = 0;
+		double newBalance = 0;
+		
+		// get user ID
+		String sql = "select id from users where username = '" + username + "';";
+		Statement s = con.createStatement();
+		ResultSet rs = s.executeQuery(sql);
+		
+		while(rs.next()) {
+			user_id = rs.getInt(1);
+		}
+		
+		System.out.println(user_id);
+		
+		String sql2 = "update accounts set balance_checking = " + i + " + balance_checking where user_id = " + user_id + ";";
+		
+		PreparedStatement ps = con.prepareStatement(sql2);
+		
+		ps.execute();
+		
+		String sql3 = "select balance_checking from accounts where user_id = " + user_id + ";";
+		
+		s = con.createStatement();
+		rs = s.executeQuery(sql3);
+		
+		while(rs.next()) {
+			newBalance = rs.getDouble(1);
+		}
+		return newBalance;
+		
 	}
 }
