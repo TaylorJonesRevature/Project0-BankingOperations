@@ -14,4 +14,5 @@ public interface accountDao {
 	public String deny(int i) throws SQLException;
 	public String approveChecking(int i) throws SQLException;
 	public double depositFunds(String username, double i) throws SQLException;
+	public double withdrawalFunds(String username, double i) throws SQLException;
 }
